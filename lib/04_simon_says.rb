@@ -6,7 +6,7 @@ def echo(str)
     str.upcase
   end
   
-  def repeat(str, times)
+  def repeat(str, times = 2)
     Array.new(times, str).join(' ')
   end
   
@@ -18,11 +18,11 @@ def echo(str)
     str.split.first
   end
   
-  def titleize(str)
-    little_words = %w[and the over]
-    words = str.split.map.with_index do |word, index|
-      index == 0 || !little_words.include?(word) ? word.capitalize : word
-    end
-    words.join(' ')
-  end
+  #def titleize(str)
+    #little_words = ["and", "the", "over"]
+    #words = str.split.map.with_index do |word, index|
+    #  index == 0 || !little_words.include?(word) ? word.capitalize : word
+    #end
+    #words.join(' ')
+  #end
   

@@ -4,17 +4,16 @@ def translate(phrase)
   end
   
   def translate_word(word)
-    vowels = %w[a e i o u]
-    consonants = %w[qu sch]
+    vowels = ["a", "e", "i", "o", "u", "y"]
+    consonants = "bcdfghjklmnpqrstvwxz".chars
   
-    if vowels.include?(word[0].downcase)
+    if vowels.include?(word[0])
       "#{word}ay"
-    elsif consonants.include?(word[0..1].downcase)
+    elsif consonants.include?(word[0..1])
       "#{word[2..]}#{word[0..1]}ay"
-    elsif consonants.include?(word[0..2].downcase)
+    elsif consonants.include?(word[0..2])
       "#{word[3..]}#{word[0..2]}ay"
     else
       "#{word[1..]}#{word[0]}ay"
     end
   end
-  
